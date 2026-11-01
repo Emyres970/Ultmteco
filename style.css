@@ -12,6 +12,7 @@
     --font-main: 'Inter', sans-serif;
     --border-color: #e0e0e0;
     --bg-light: #f9f9f9;
+    --total-bg: #0d5c9e; /* Darker blue for total bar */
 }
 
 body {
@@ -30,7 +31,6 @@ body {
     flex-direction: column;
     padding: 20px 24px;
     
-    /* Replace with your GitHub image link */
     background-image: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.8)), url('https://raw.githubusercontent.com/Emyres970/Ultmteco/refs/heads/main/Src/file_0000000020ec81f4a1f7f070cd763d3b.png');
     background-size: cover;
     background-position: center;
@@ -168,7 +168,7 @@ body {
     z-index: 20;
 }
 
-/* --- FORM SECTION --- */
+/* --- NEW FORM SECTION --- */
 .form-section {
     padding: 50px 24px;
     background-color: #ffffff;
@@ -181,11 +181,6 @@ body {
     font-weight: 700;
     letter-spacing: -0.5px;
     margin-bottom: 30px;
-}
-
-/* NEW: Spacing between multiple options */
-.option-container {
-    margin-bottom: 40px; 
 }
 
 .option-header {
@@ -204,14 +199,9 @@ body {
 }
 
 .image-marker {
-    color: #d9534f; /* Subtle red for required */
+    color: #d9534f; 
     font-size: 0.9rem;
     font-weight: 600;
-}
-
-/* NEW: Grey color for the "no image needed" marker */
-.image-marker.no-image {
-    color: #777; 
 }
 
 /* --- FORM BOX --- */
@@ -307,6 +297,106 @@ body {
     opacity: 0.9;
 }
 
+/* --- NEW: TOTAL BAR --- */
+.total-bar {
+    display: flex;
+    width: 100%;
+    background-color: var(--total-bg);
+    color: var(--text-white);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-top: 1px solid #0b4f88;
+}
+
+.total-label {
+    flex: 1;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.total-amount {
+    background-color: #0b4a7d; /* Slightly darker for contrast */
+    padding: 16px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+}
+
+/* --- NEW: FOOTER SECTION --- */
+.site-footer {
+    padding: 40px 24px;
+    background-color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-image-container {
+    width: 100%;
+    margin-bottom: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.footer-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.footer-heading {
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.brochure-heading {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: #444;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: var(--primary-blue);
+}
+
+.footer-link.active-dropdown {
+    color: var(--primary-blue);
+    border-right: 4px solid var(--primary-blue);
+    padding-right: 10px;
+}
+
+.dropdown-icon {
+    font-size: 0.8rem;
+    color: #888;
+}
+
 /* --- RESPONSIVE DESKTOP ADJUSTMENTS --- */
 @media (min-width: 768px) {
     .hero-section {
@@ -331,6 +421,10 @@ body {
     .form-section {
         padding: 80px 60px;
         max-width: 800px;
-        margin: 0 auto; /* Centers the form on desktop */
+        margin: 0 auto; 
+    }
+
+    .site-footer {
+        padding: 60px;
     }
 }
