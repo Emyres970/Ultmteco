@@ -31,7 +31,7 @@ body {
     padding: 20px 24px;
     
     /* Replace with your GitHub image link */
-    background-image: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.8)), url('YOUR_GITHUB_IMAGE_LINK_HERE');
+    background-image: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.8)), url('https://raw.githubusercontent.com/Emyres970/Ultmteco/refs/heads/main/Src/file_0000000020ec81f4a1f7f070cd763d3b.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
