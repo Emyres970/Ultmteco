@@ -184,6 +184,11 @@ body {
     margin-bottom: 30px;
 }
 
+/* Spacing between multiple options */
+.option-container {
+    margin-bottom: 40px; 
+}
+
 .option-header {
     display: flex;
     flex-direction: column;
@@ -203,6 +208,11 @@ body {
     color: #d9534f; 
     font-size: 0.9rem;
     font-weight: 600;
+}
+
+/* Grey color for the "no image needed" marker */
+.image-marker.no-image {
+    color: #777; 
 }
 
 .form-box {
@@ -604,7 +614,7 @@ body {
     .dark-footer {
         padding: 60px;
         flex-direction: row;
-        flex-wrap: wrap; /* Allows widgets to wrap on desktop */
+        flex-wrap: wrap; 
         justify-content: space-between;
         align-items: flex-start;
     }
