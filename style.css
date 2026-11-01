@@ -13,7 +13,7 @@
     --border-color: #e0e0e0;
     --bg-light: #f9f9f9;
     --total-bg: #0d5c9e; 
-    --dark-blue-footer: #0f4980; /* Matched from screenshot */
+    --dark-blue-footer: #0f4980; 
 }
 
 body {
@@ -445,7 +445,7 @@ body {
     font-size: 1.4rem;
     font-weight: 600;
     text-transform: uppercase;
-    color: #4a90e2; /* Light blue for headings */
+    color: #4a90e2; 
     margin-bottom: 15px;
     letter-spacing: 0.5px;
 }
@@ -491,7 +491,7 @@ body {
 }
 
 .post-date {
-    color: #b0c4de; /* Light grayish blue */
+    color: #b0c4de; 
     font-size: 0.85rem;
 }
 
@@ -501,12 +501,72 @@ body {
     max-width: 100%;
     height: auto;
     margin-top: 10px;
-    filter: brightness(0) invert(1); /* Forces the logo to be white to match the screenshot */
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1); 
+}
+
+.about-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #d1e1f0;
+}
+
+/* --- QUICK LINKS --- */
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px 20px;
+    font-size: 0.95rem;
+}
+
+.quick-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s;
+}
+
+.quick-link:hover {
+    color: #4a90e2;
+}
+
+.sub-links {
+    grid-column: 1 / -1; 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+    padding-left: 15px; 
+    margin-bottom: 10px;
+}
+
+.sub-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.sub-link:hover {
+    color: #4a90e2;
+}
+
+/* Ensure "Contact" falls under the Cost Calculators sub-links */
+.quick-links-grid > .quick-link:last-child {
+    grid-column: 1 / -1;
 }
 
 .footer-chat {
     bottom: 25px;
     right: 25px;
+}
+
+/* --- COPYRIGHT BAR --- */
+.copyright-bar {
+    background-color: #0b4a7d; 
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 24px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 
@@ -544,11 +604,14 @@ body {
     .dark-footer {
         padding: 60px;
         flex-direction: row;
+        flex-wrap: wrap; /* Allows widgets to wrap on desktop */
         justify-content: space-between;
+        align-items: flex-start;
     }
 
     .footer-widget {
         flex: 1;
-        max-width: 45%;
+        min-width: 250px;
+        margin-bottom: 30px;
     }
 }
