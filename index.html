@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ultimate Courier | Make Your Payment</title>
     
-    <!-- Google Fonts (Inter for a clean, modern look similar to the screenshot) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -40,10 +40,8 @@
                 CALCULATOR
             </h1>
             
-            <!-- The small blue line under the title -->
             <div class="title-accent-line"></div>
 
-            <!-- Action Buttons -->
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-blue">
                     <i class="fa-regular fa-comment-dots"></i> CONTACT US
@@ -54,104 +52,83 @@
             </div>
         </div>
 
-        <!-- Floating Chat Icon (Bottom Right) -->
         <button class="floating-chat-btn" aria-label="Chat with us">
             <i class="fa-solid fa-comment"></i>
         </button>
 
     </section>
 
-    <!-- SECTION 1: OPTIONS -->
+    <!-- SECTION 1 (Options) -->
     <section class="form-section">
         
-        <!-- Main Section Header Placeholder -->
         <h2 class="section-title">Section 1</h2>
 
-        <!-- ========================================== -->
-        <!-- OPTION 1 -->
-        <!-- ========================================== -->
-        <div class="option-container">
-            
-            <div class="option-header">
-                <h3 class="option-title">Option 1: Enter option here</h3>
-                <span class="image-marker">(Requires Image Upload)</span>
-            </div>
-
-            <!-- The Form Box -->
-            <div class="form-box">
-                
-                <!-- Form Group: Label -->
-                <div class="form-group">
-                    <label for="form-label-1" class="form-label">Label Placeholder</label>
-                    
-                    <!-- Instruction Text -->
-                    <p class="instruction-text">
-                        <span class="instruction-bold">Instruction:</span> 
-                        Placeholder for instructions.
-                    </p>
-                </div>
-
-                <!-- Form Group: Image Upload -->
-                <div class="form-group upload-group">
-                    <label for="image-upload-1" class="upload-label">
-                        Upload Image Label Placeholder
-                    </label>
-                    
-                    <!-- Styled file input -->
-                    <input type="file" id="image-upload-1" class="file-input" accept="image/*">
-                </div>
-
-                <!-- Submit Button -->
-                <button type="button" class="submit-btn">
-                    Upload Button Text Placeholder
-                </button>
-
-            </div>
+        <!-- Option 1 -->
+        <div class="option-header">
+            <h3 class="option-title">Option 1: Enter option here</h3>
+            <span class="image-marker">(Requires Image Upload)</span>
         </div>
 
-        <!-- ========================================== -->
-        <!-- OPTION 2 -->
-        <!-- ========================================== -->
-        <div class="option-container">
-            
-            <div class="option-header">
-                <h3 class="option-title">Option 2: Enter option here</h3>
-                <span class="image-marker no-image">(No image needed)</span>
+        <div class="form-box">
+            <div class="form-group">
+                <label for="form-label" class="form-label">Label Placeholder</label>
+                <p class="instruction-text">
+                    <span class="instruction-bold">Instruction:</span> 
+                    Placeholder for instructions.
+                </p>
             </div>
 
-            <!-- The Form Box -->
-            <div class="form-box">
-                
-                <!-- Form Group: Label -->
-                <div class="form-group">
-                    <label for="form-label-2" class="form-label">Label Placeholder</label>
-                    
-                    <!-- Instruction Text -->
-                    <p class="instruction-text">
-                        <span class="instruction-bold">Instruction:</span> 
-                        Placeholder for instructions.
-                    </p>
-                </div>
-
-                <!-- Form Group: Image Upload (Keeping it here as requested, though text says no image needed) -->
-                <div class="form-group upload-group">
-                    <label for="image-upload-2" class="upload-label">
-                        Upload Image Label Placeholder
-                    </label>
-                    
-                    <!-- Styled file input -->
-                    <input type="file" id="image-upload-2" class="file-input" accept="image/*">
-                </div>
-
-                <!-- Submit Button -->
-                <button type="button" class="submit-btn">
-                    Upload Button Text Placeholder
-                </button>
-
+            <div class="form-group upload-group">
+                <label for="image-upload" class="upload-label">
+                    Upload Image Label Placeholder
+                </label>
+                <input type="file" id="image-upload" class="file-input" accept="image/*">
             </div>
+
+            <button type="button" class="submit-btn">
+                Upload Button Text Placeholder
+            </button>
         </div>
 
     </section>
+
+    <!-- NEW: TOTAL BAR & FOOTER SECTION -->
+    <div class="total-bar">
+        <div class="total-label">TOTAL</div>
+        <div class="total-amount">$ 0.00</div>
+    </div>
+
+    <footer class="site-footer">
+        
+        <!-- PLACEHOLDER: Replace src with your GitHub image link for the footer image -->
+        <div class="footer-image-container">
+            <img src="https://via.placeholder.com/600x300/eeeeee/999999?text=Footer+Image+Placeholder" alt="Courier Service" class="footer-img">
+        </div>
+
+        <!-- Calculations Title -->
+        <h2 class="footer-heading">Calculators</h2>
+
+        <!-- Footer Navigation Links -->
+        <nav class="footer-nav">
+            <a href="#" class="footer-link">HOME</a>
+            <a href="#" class="footer-link">TRACK SHIPMENT</a>
+            <a href="#" class="footer-link">COMPANY</a>
+            <a href="#" class="footer-link">SERVICES</a>
+            
+            <!-- Dropdown/Active Link -->
+            <a href="#" class="footer-link active-dropdown">
+                COST CALCULATORS 
+                <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+            </a>
+            
+            <a href="#" class="footer-link">PRICING</a>
+            <a href="#" class="footer-link">CONTACT</a>
+        </nav>
+
+        <!-- Brochures Title -->
+        <h2 class="footer-heading brochure-heading">Brochures</h2>
+
+    </footer>
 
     <!-- Your JS -->
     <script src="main.js"></script>
