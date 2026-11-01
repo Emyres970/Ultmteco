@@ -168,7 +168,7 @@ body {
     z-index: 20;
 }
 
-/* --- NEW FORM SECTION --- */
+/* --- FORM SECTION --- */
 .form-section {
     padding: 50px 24px;
     background-color: #ffffff;
@@ -181,6 +181,11 @@ body {
     font-weight: 700;
     letter-spacing: -0.5px;
     margin-bottom: 30px;
+}
+
+/* NEW: Spacing between multiple options */
+.option-container {
+    margin-bottom: 40px; 
 }
 
 .option-header {
@@ -199,9 +204,14 @@ body {
 }
 
 .image-marker {
-    color: #d9534f; /* A subtle red to indicate an upload requirement */
+    color: #d9534f; /* Subtle red for required */
     font-size: 0.9rem;
     font-weight: 600;
+}
+
+/* NEW: Grey color for the "no image needed" marker */
+.image-marker.no-image {
+    color: #777; 
 }
 
 /* --- FORM BOX --- */
