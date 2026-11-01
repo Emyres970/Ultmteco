@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -92,31 +92,30 @@
 
     </section>
 
-    <!-- NEW: TOTAL BAR & FOOTER SECTION -->
+    <!-- TOTAL BAR -->
     <div class="total-bar">
         <div class="total-label">TOTAL</div>
         <div class="total-amount">$ 0.00</div>
     </div>
 
-    <footer class="site-footer">
+    <!-- MAIN FOOTER CONTAINER (White background) -->
+    <div class="main-footer-container">
         
-        <!-- PLACEHOLDER: Replace src with your GitHub image link for the footer image -->
+        <!-- Footer Image Placeholder -->
         <div class="footer-image-container">
             <img src="https://raw.githubusercontent.com/Emyres970/Ultmteco/refs/heads/main/Src/shutterstock_158330768-320x213.jpg" alt="Courier Service" class="footer-img">
         </div>
 
-        <!-- Calculations Title -->
+        <!-- Calculators Section -->
         <h2 class="footer-heading">Calculators</h2>
 
-        <!-- Footer Navigation Links -->
         <nav class="footer-nav">
             <a href="#" class="footer-link">HOME</a>
             <a href="#" class="footer-link">TRACK SHIPMENT</a>
             <a href="#" class="footer-link">COMPANY</a>
             <a href="#" class="footer-link">SERVICES</a>
             
-            <!-- Dropdown/Active Link -->
-            <a href="#" class="footer-link active-dropdown">
+            <a href="#" class="footer-link dropdown-link">
                 COST CALCULATORS 
                 <i class="fa-solid fa-chevron-down dropdown-icon"></i>
             </a>
@@ -125,9 +124,62 @@
             <a href="#" class="footer-link">CONTACT</a>
         </nav>
 
-        <!-- Brochures Title -->
+        <!-- Brochures Section -->
         <h2 class="footer-heading brochure-heading">Brochures</h2>
+        
+        <div class="brochure-boxes">
+            <a href="#" class="brochure-box">
+                <i class="fa-regular fa-file-lines brochure-icon"></i>
+                SERVICE BROCHURE
+            </a>
+            <a href="#" class="brochure-box">
+                <i class="fa-solid fa-calculator brochure-icon"></i>
+                COUNTRY RATES
+            </a>
+        </div>
 
+    </div> <!-- End of White Background Container -->
+
+    <!-- DARK BLUE FOOTER SECTION -->
+    <footer class="dark-footer">
+        
+        <!-- Recent Posts Section -->
+        <div class="footer-widget">
+            <h2 class="widget-title">RECENT POSTS</h2>
+            <div class="widget-underline"></div>
+            
+            <div class="recent-post">
+                <!-- PLACEHOLDER: Replace src with Truck Image Link -->
+                <img src="https://via.placeholder.com/80x80/cccccc/333333?text=Truck" alt="Truck" class="post-img">
+                <div class="post-info">
+                    <a href="#" class="post-title">New Trucks Arriving</a>
+                    <span class="post-date">December 9, 2020</span>
+                </div>
+            </div>
+
+            <div class="recent-post">
+                <!-- PLACEHOLDER: Replace src with Airplane Image Link -->
+                <img src="https://via.placeholder.com/80x80/cccccc/333333?text=Plane" alt="Airplane" class="post-img">
+                <div class="post-info">
+                    <a href="#" class="post-title">Liberalisation of air cargo industry</a>
+                    <span class="post-date">December 8, 2020</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Us Section -->
+        <div class="footer-widget">
+            <h2 class="widget-title">ABOUT US</h2>
+            <div class="widget-underline"></div>
+            
+            <!-- PLACEHOLDER: Replace src with the Large White Footer Logo Link -->
+            <img src="https://raw.githubusercontent.com/Emyres970/Ultmteco/refs/heads/main/Src/UC1-1.png" alt="Ultimate Courier Logo" class="footer-logo-large">
+        </div>
+
+        <!-- Floating Chat Icon (Moved here to stay fixed on screen in footer) -->
+        <button class="floating-chat-btn footer-chat" aria-label="Chat with us">
+            <i class="fa-solid fa-comment"></i>
+        </button>
     </footer>
 
     <!-- Your JS -->
