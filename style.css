@@ -6,8 +6,8 @@
 }
 
 :root {
-    --primary-blue: #1a73e8; /* Adjust to match their exact blue */
-    --primary-grey: #7a7a7a; /* Adjust to match their exact grey */
+    --primary-blue: #1a73e8; /* Match exact blue */
+    --primary-grey: #7a7a7a; /* Match exact grey */
     --text-white: #ffffff;
     --font-main: 'Inter', sans-serif;
 }
@@ -23,50 +23,51 @@ body {
 .hero-section {
     position: relative;
     width: 100%;
-    min-height: 100vh; /* Takes up full screen height on mobile */
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
-    /* PLACEHOLDER: Replace the URL below with your GitHub raw image URL for the background */
-    background-image: linear-gradient(rgba(0, 30, 60, 0.5), rgba(0, 30, 60, 0.6)), url('https://via.placeholder.com/1080x1920/222222/ffffff?text=Replace+With+Background+Image');
+    padding: 20px 24px;
+    
+    /* THE BACKGROUND IMAGE IS CONTROLLED HERE */
+    /* Replace the URL below with your GitHub image link (e.g., https://raw.githubusercontent.com/...) */
+    background-image: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.8)), url('YOUR_GITHUB_IMAGE_LINK_HERE');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 20px 24px;
 }
-
-/* Gradient overlay trick: If you want exact color control instead of the linear-gradient above, 
-   you can use a pseudo-element, but the linear-gradient in the background-image is cleaner. */
 
 /* --- HEADER / NAV --- */
 .hero-header {
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: space-between; /* Keeps menu on left, logo on right */
     z-index: 10;
+    position: relative;
+    width: 100%;
 }
 
 .menu-btn {
     background: transparent;
     border: none;
     color: var(--text-white);
-    font-size: 24px;
+    font-size: 28px;
     cursor: pointer;
     padding: 5px;
 }
 
 .logo-area {
-    flex-grow: 1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Perfectly centers the logo */
     display: flex;
     justify-content: center;
-    /* Adjust this to match the actual logo alignment */
-    margin-right: 40px; 
+    align-items: center;
 }
 
 .logo-img {
-    max-height: 50px;
+    max-height: 60px; /* Adjust this if your logo needs to be bigger/smaller */
     width: auto;
     object-fit: contain;
-    /* If your logo is white, this ensures it shows */
 }
 
 /* --- HERO CONTENT --- */
@@ -74,40 +75,40 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers content vertically */
+    justify-content: center; 
     z-index: 10;
-    margin-top: 60px; /* Pushes it down slightly from the logo */
+    margin-top: 80px; /* Pushes content down slightly */
 }
 
 .hero-subtitle {
     color: var(--text-white);
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 400;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     letter-spacing: 0.5px;
 }
 
 .hero-title {
     color: var(--text-white);
-    font-size: 3rem; /* Adjust for mobile */
-    line-height: 1.1;
+    font-size: 3.2rem; 
+    line-height: 1.15; /* Fixed the overlapping text */
     font-weight: 800;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     letter-spacing: -0.5px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4); /* Helps text stand out on busy backgrounds */
 }
 
 .title-accent-line {
-    width: 60px;
+    width: 70px;
     height: 4px;
-    background-color: var(--primary-blue); /* Or a lighter blue if it matches better */
-    margin-bottom: 40px;
+    background-color: var(--primary-blue); 
+    margin-bottom: 45px;
 }
 
 /* --- BUTTONS --- */
 .hero-buttons {
     display: flex;
     gap: 12px;
-    flex-wrap: wrap; /* Allows stacking on very small screens */
     margin-bottom: 50px;
 }
 
@@ -116,16 +117,16 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 15px 24px;
+    padding: 16px 20px;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    border-radius: 2px; /* Almost rectangular with slight softening */
+    border-radius: 2px; 
     transition: opacity 0.2s ease;
-    flex: 1; /* Makes buttons take equal width on small screens */
-    min-width: 140px; /* Prevents them from getting too tiny */
+    flex: 1; /* Makes both buttons equal width */
+    white-space: nowrap; /* Prevents "OUR SERVICES" from breaking into two lines */
 }
 
 .btn:hover {
@@ -153,7 +154,7 @@ body {
     right: 25px;
     width: 55px;
     height: 55px;
-    background-color: #283bda; /* Match exact blue */
+    background-color: #283bda; 
     color: white;
     border: none;
     border-radius: 50%;
@@ -166,9 +167,9 @@ body {
     z-index: 20;
 }
 
-/* --- QUOTE SECTION (Bottom Part of Screenshot) --- */
+/* --- QUOTE SECTION --- */
 .quote-section {
-    padding: 40px 24px;
+    padding: 50px 24px;
     background-color: #ffffff;
 }
 
@@ -181,25 +182,31 @@ body {
 
 .quote-title {
     color: #333;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     line-height: 1.1;
     font-weight: 700;
     letter-spacing: -0.5px;
 }
 
-/* --- RESPONSIVE DESKTOP ADJUSTMENTS (Optional but good for the future) --- */
+/* --- RESPONSIVE DESKTOP ADJUSTMENTS --- */
 @media (min-width: 768px) {
     .hero-section {
         padding: 40px 60px;
     }
     
     .hero-title {
-        font-size: 4rem;
-        max-width: 600px;
+        font-size: 4.5rem;
+        max-width: 700px;
     }
     
     .hero-buttons {
-        flex-wrap: nowrap;
         max-width: 500px;
+    }
+
+    .logo-area {
+        /* On desktop, you might want the logo to align left or stay center */
+        position: relative;
+        left: 0;
+        transform: none;
     }
 }
