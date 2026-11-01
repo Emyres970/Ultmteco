@@ -1,0 +1,205 @@
+/* --- RESET & VARIABLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #1a73e8; /* Adjust to match their exact blue */
+    --primary-grey: #7a7a7a; /* Adjust to match their exact grey */
+    --text-white: #ffffff;
+    --font-main: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: #ffffff;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Takes up full screen height on mobile */
+    display: flex;
+    flex-direction: column;
+    /* PLACEHOLDER: Replace the URL below with your GitHub raw image URL for the background */
+    background-image: linear-gradient(rgba(0, 30, 60, 0.5), rgba(0, 30, 60, 0.6)), url('https://via.placeholder.com/1080x1920/222222/ffffff?text=Replace+With+Background+Image');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px 24px;
+}
+
+/* Gradient overlay trick: If you want exact color control instead of the linear-gradient above, 
+   you can use a pseudo-element, but the linear-gradient in the background-image is cleaner. */
+
+/* --- HEADER / NAV --- */
+.hero-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 10;
+}
+
+.menu-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-white);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.logo-area {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    /* Adjust this to match the actual logo alignment */
+    margin-right: 40px; 
+}
+
+.logo-img {
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
+    /* If your logo is white, this ensures it shows */
+}
+
+/* --- HERO CONTENT --- */
+.hero-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    z-index: 10;
+    margin-top: 60px; /* Pushes it down slightly from the logo */
+}
+
+.hero-subtitle {
+    color: var(--text-white);
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.hero-title {
+    color: var(--text-white);
+    font-size: 3rem; /* Adjust for mobile */
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.title-accent-line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-blue); /* Or a lighter blue if it matches better */
+    margin-bottom: 40px;
+}
+
+/* --- BUTTONS --- */
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap; /* Allows stacking on very small screens */
+    margin-bottom: 50px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 24px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: 2px; /* Almost rectangular with slight softening */
+    transition: opacity 0.2s ease;
+    flex: 1; /* Makes buttons take equal width on small screens */
+    min-width: 140px; /* Prevents them from getting too tiny */
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.btn-blue {
+    background-color: var(--primary-blue);
+    color: var(--text-white);
+}
+
+.btn-grey {
+    background-color: var(--primary-grey);
+    color: var(--text-white);
+}
+
+.btn i {
+    font-size: 1.1rem;
+}
+
+/* --- FLOATING CHAT BUTTON --- */
+.floating-chat-btn {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    background-color: #283bda; /* Match exact blue */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 20;
+}
+
+/* --- QUOTE SECTION (Bottom Part of Screenshot) --- */
+.quote-section {
+    padding: 40px 24px;
+    background-color: #ffffff;
+}
+
+.quote-small {
+    color: #555;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.quote-title {
+    color: #333;
+    font-size: 2.2rem;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* --- RESPONSIVE DESKTOP ADJUSTMENTS (Optional but good for the future) --- */
+@media (min-width: 768px) {
+    .hero-section {
+        padding: 40px 60px;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+        max-width: 600px;
+    }
+    
+    .hero-buttons {
+        flex-wrap: nowrap;
+        max-width: 500px;
+    }
+}
