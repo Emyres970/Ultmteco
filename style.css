@@ -6,10 +6,12 @@
 }
 
 :root {
-    --primary-blue: #1a73e8; /* Match exact blue */
-    --primary-grey: #7a7a7a; /* Match exact grey */
+    --primary-blue: #1a73e8; 
+    --primary-grey: #7a7a7a; 
     --text-white: #ffffff;
     --font-main: 'Inter', sans-serif;
+    --border-color: #e0e0e0;
+    --bg-light: #f9f9f9;
 }
 
 body {
@@ -28,9 +30,8 @@ body {
     flex-direction: column;
     padding: 20px 24px;
     
-    /* THE BACKGROUND IMAGE IS CONTROLLED HERE */
-    /* Replace the URL below with your GitHub image link (e.g., https://raw.githubusercontent.com/...) */
-    background-image: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.8)), url('https://raw.githubusercontent.com/Emyres970/Ultmteco/refs/heads/main/Src/file_0000000020ec81f4a1f7f070cd763d3b.png');
+    /* Replace with your GitHub image link */
+    background-image: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.8)), url('YOUR_GITHUB_IMAGE_LINK_HERE');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -40,7 +41,7 @@ body {
 .hero-header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Keeps menu on left, logo on right */
+    justify-content: space-between; 
     z-index: 10;
     position: relative;
     width: 100%;
@@ -58,14 +59,14 @@ body {
 .logo-area {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%); /* Perfectly centers the logo */
+    transform: translateX(-50%); 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .logo-img {
-    max-height: 60px; /* Adjust this if your logo needs to be bigger/smaller */
+    max-height: 60px; 
     width: auto;
     object-fit: contain;
 }
@@ -77,7 +78,7 @@ body {
     flex-direction: column;
     justify-content: center; 
     z-index: 10;
-    margin-top: 80px; /* Pushes content down slightly */
+    margin-top: 80px; 
 }
 
 .hero-subtitle {
@@ -91,11 +92,11 @@ body {
 .hero-title {
     color: var(--text-white);
     font-size: 3.2rem; 
-    line-height: 1.15; /* Fixed the overlapping text */
+    line-height: 1.15; 
     font-weight: 800;
     margin-bottom: 20px;
     letter-spacing: -0.5px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.4); /* Helps text stand out on busy backgrounds */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4); 
 }
 
 .title-accent-line {
@@ -125,8 +126,8 @@ body {
     text-transform: uppercase;
     border-radius: 2px; 
     transition: opacity 0.2s ease;
-    flex: 1; /* Makes both buttons equal width */
-    white-space: nowrap; /* Prevents "OUR SERVICES" from breaking into two lines */
+    flex: 1; 
+    white-space: nowrap; 
 }
 
 .btn:hover {
@@ -167,25 +168,133 @@ body {
     z-index: 20;
 }
 
-/* --- QUOTE SECTION --- */
-.quote-section {
+/* --- NEW FORM SECTION --- */
+.form-section {
     padding: 50px 24px;
     background-color: #ffffff;
 }
 
-.quote-small {
-    color: #555;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.quote-title {
+.section-title {
     color: #333;
     font-size: 2.4rem;
     line-height: 1.1;
     font-weight: 700;
     letter-spacing: -0.5px;
+    margin-bottom: 30px;
+}
+
+.option-header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.option-title {
+    color: #222;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.image-marker {
+    color: #d9534f; /* A subtle red to indicate an upload requirement */
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* --- FORM BOX --- */
+.form-box {
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #333;
+}
+
+.instruction-text {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.instruction-bold {
+    font-weight: 700;
+    color: #333;
+}
+
+/* --- UPLOAD GROUP --- */
+.upload-group {
+    margin-top: 10px;
+}
+
+.upload-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.file-input {
+    width: 100%;
+    padding: 12px;
+    background-color: #ffffff;
+    border: 1px dashed #aaa;
+    border-radius: 4px;
+    font-family: var(--font-main);
+    color: #555;
+    cursor: pointer;
+}
+
+.file-input::file-selector-button {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.file-input::file-selector-button:hover {
+    background-color: #ccc;
+}
+
+/* --- SUBMIT BUTTON --- */
+.submit-btn {
+    background-color: var(--primary-blue);
+    color: var(--text-white);
+    border: none;
+    padding: 16px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
 }
 
 /* --- RESPONSIVE DESKTOP ADJUSTMENTS --- */
@@ -204,9 +313,14 @@ body {
     }
 
     .logo-area {
-        /* On desktop, you might want the logo to align left or stay center */
         position: relative;
         left: 0;
         transform: none;
+    }
+    
+    .form-section {
+        padding: 80px 60px;
+        max-width: 800px;
+        margin: 0 auto; /* Centers the form on desktop */
     }
 }
