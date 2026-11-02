@@ -1,5 +1,4 @@
 // main.js
-
 document.addEventListener('DOMContentLoaded', () => {
     
     // --- Helper Function to Handle Uploads ---
@@ -7,35 +6,37 @@ document.addEventListener('DOMContentLoaded', () => {
         const fileInput = document.getElementById(fileInputId);
         const button = document.querySelector(buttonClass);
         
-        // Check if a file is selected
+        // 1. Check if Supabase is actually loaded
+        if (typeof supabaseClient === 'undefined') {
+            alert('Error: Supabase is not connected. Please check the script tags in your HTML.');
+            return;
+        }
+
+        // 2. Check if a file is selected
         if (!fileInput || !fileInput.files.length) {
             alert('Please select an image to upload first.');
             return;
         }
 
         const file = fileInput.files[0];
-        
-        // Generate a unique filename: timestamp_originalname
-        // This prevents overwriting files with the same name
         const fileName = `${Date.now()}_${file.name}`;
         
-        // Disable button during upload to prevent double-clicks
+        // Disable button during upload
         const originalText = button.innerText;
         button.innerText = 'Uploading...';
         button.disabled = true;
 
         try {
-            // Upload to Supabase
+            // 3. Upload to Supabase
             const { data, error } = await supabaseClient
                 .storage
-                .from(BUCKET_NAME) // BUCKET_NAME is defined in supabase-config.js
+                .from(BUCKET_NAME)
                 .upload(fileName, file);
 
             if (error) {
                 throw error;
             }
 
-            // Success
             console.log('Upload successful:', data);
             alert('File uploaded successfully!');
             fileInput.value = ''; // Clear the input
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn1 = document.querySelector('.option-container:nth-of-type(1) .submit-btn');
     if (submitBtn1) {
         submitBtn1.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevent any default form submission
+            e.preventDefault();
             handleUpload('image-upload-1', '.option-container:nth-of-type(1) .submit-btn');
         });
     }
@@ -68,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Existing Chat/Menu Alerts (Keep these if you still want them) ---
+    // --- Chat Button ---
     const chatBtn = document.querySelector('.floating-chat-btn');
     if (chatBtn) {
         chatBtn.addEventListener('click', () => {
