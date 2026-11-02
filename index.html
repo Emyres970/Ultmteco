@@ -21,12 +21,49 @@
     <!-- YELLOW TRANSLATE BUTTON -->
     <div class="translate-btn">Translate »</div>
 
+    <!-- SIDEBAR MENU OVERLAY -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- SIDEBAR MENU -->
+    <aside class="sidebar-menu" id="sidebarMenu">
+        <div class="sidebar-header">
+            <img src="https://raw.githubusercontent.com/Emyres970/Ultmteco/refs/heads/main/Src/UC1-1.png" alt="Ultimate Courier Logo" class="sidebar-logo">
+            <button class="close-menu-btn" id="closeMenuBtn" aria-label="Close Menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="sidebar-link">HOME</a>
+            <a href="#" class="sidebar-link">TRACK SHIPMENT</a>
+            <a href="#" class="sidebar-link">COMPANY</a>
+            <a href="#" class="sidebar-link">SERVICES</a>
+            
+            <!-- Collapsible Dropdown -->
+            <div class="sidebar-dropdown-wrapper">
+                <button class="sidebar-link dropdown-toggle" id="dropdownToggle">
+                    COST CALCULATORS
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="sidebar-submenu" id="dropdownMenu">
+                    <a href="#" class="submenu-link">TRUCKING</a>
+                    <a href="#" class="submenu-link">AIR CARGO</a>
+                    <a href="#" class="submenu-link">OCEAN CARGO</a>
+                    <a href="#" class="submenu-link">COURIER SERVICE</a>
+                </div>
+            </div>
+
+            <a href="#" class="sidebar-link">PRICING</a>
+            <a href="#" class="sidebar-link">CONTACT</a>
+        </nav>
+    </aside>
+
     <!-- HERO SECTION -->
     <section class="hero-section">
         
         <!-- Header / Navigation -->
         <header class="hero-header">
-            <button class="menu-btn" aria-label="Open Menu">
+            <button class="menu-btn" id="openMenuBtn" aria-label="Open Menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
             
@@ -66,9 +103,7 @@
         
         <h2 class="section-title">Section 1</h2>
 
-        <!-- ========================================== -->
         <!-- OPTION 1 -->
-        <!-- ========================================== -->
         <div class="option-container">
             <div class="option-header">
                 <h3 class="option-title">Option 1: Enter option here</h3>
@@ -97,9 +132,7 @@
             </div>
         </div>
 
-        <!-- ========================================== -->
         <!-- OPTION 2 -->
-        <!-- ========================================== -->
         <div class="option-container">
             <div class="option-header">
                 <h3 class="option-title">Option 2: Enter option here</h3>
@@ -139,12 +172,10 @@
     <!-- MAIN FOOTER CONTAINER (White background) -->
     <div class="main-footer-container">
         
-        <!-- Footer Image Placeholder -->
         <div class="footer-image-container">
             <img src="https://raw.githubusercontent.com/Emyres970/Ultmteco/refs/heads/main/Src/shutterstock_158330768-320x213.jpg" alt="Courier Service" class="footer-img">
         </div>
 
-        <!-- Calculators Section -->
         <h2 class="footer-heading">Calculators</h2>
 
         <nav class="footer-nav">
@@ -152,17 +183,14 @@
             <a href="#" class="footer-link">TRACK SHIPMENT</a>
             <a href="#" class="footer-link">COMPANY</a>
             <a href="#" class="footer-link">SERVICES</a>
-            
             <a href="#" class="footer-link dropdown-link">
                 COST CALCULATORS 
                 <i class="fa-solid fa-chevron-down dropdown-icon"></i>
             </a>
-            
             <a href="#" class="footer-link">PRICING</a>
             <a href="#" class="footer-link">CONTACT</a>
         </nav>
 
-        <!-- Brochures Section -->
         <h2 class="footer-heading brochure-heading">Brochures</h2>
         
         <div class="brochure-boxes">
@@ -176,12 +204,11 @@
             </a>
         </div>
 
-    </div> <!-- End of White Background Container -->
+    </div> 
 
     <!-- DARK BLUE FOOTER SECTION -->
     <footer class="dark-footer">
         
-        <!-- Recent Posts Section -->
         <div class="footer-widget">
             <h2 class="widget-title">RECENT POSTS</h2>
             <div class="widget-underline"></div>
@@ -203,7 +230,6 @@
             </div>
         </div>
 
-        <!-- About Us Section -->
         <div class="footer-widget">
             <h2 class="widget-title">ABOUT US</h2>
             <div class="widget-underline"></div>
@@ -215,7 +241,6 @@
             </p>
         </div>
 
-        <!-- Quick Links Section -->
         <div class="footer-widget">
             <h2 class="widget-title">QUICK LINKS</h2>
             <div class="widget-underline"></div>
@@ -228,7 +253,6 @@
                 <a href="#" class="quick-link">Cost Calculators</a>
                 <a href="#" class="quick-link">Pricing</a>
                 
-                <!-- Sub-links for Cost Calculators -->
                 <div class="sub-links">
                     <a href="#" class="sub-link">Trucking</a>
                     <a href="#" class="sub-link">Air cargo</a>
@@ -242,30 +266,27 @@
             </div>
         </div>
 
-        <!-- Service Calculator Section -->
         <div class="footer-widget">
             <h2 class="widget-title">SERVICE CALCULATOR</h2>
             <div class="widget-underline"></div>
         </div>
 
-        <!-- Floating Chat Icon -->
         <button class="floating-chat-btn footer-chat" aria-label="Chat with us">
             <i class="fa-solid fa-comment"></i>
         </button>
     </footer>
 
-        <!-- COPYRIGHT BAR -->
+    <!-- COPYRIGHT BAR -->
     <div class="copyright-bar">
         <p>Copyright by UltimateCourier Ltd All rights reserved</p>
     </div>
 
-    <!-- Supabase Client Library MUST load first -->
+    <!-- CUSTOM SNACKBAR CONTAINER -->
+    <div id="snackbar" class="snackbar"></div>
+
+    <!-- Supabase Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
-    <!-- Configuration MUST load second -->
     <script src="supabase-config.js"></script>
-    
-    <!-- Main Logic MUST load last -->
     <script src="main.js"></script>
 </body>
 </html>
