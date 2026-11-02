@@ -45,8 +45,8 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(50, 40, 30, 0.4); /* Muted brownish blur look */
-    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for contrast */
+    backdrop-filter: blur(2px);
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
@@ -65,13 +65,13 @@ body {
     width: 85%;
     max-width: 320px;
     height: 100vh;
-    background-color: #d8c8ba; /* Match the brownish background in screenshot */
+    background-color: #f4f5f6; /* Exact light grey from screenshot */
     z-index: 1001;
     display: flex;
     flex-direction: column;
     transition: left 0.3s ease;
     overflow-y: auto;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
 }
 
 .sidebar-menu.active {
@@ -94,7 +94,7 @@ body {
 .close-menu-btn {
     background: transparent;
     border: none;
-    color: #1a5c8a;
+    color: #1a5c8a; /* Blue close icon */
     font-size: 28px;
     cursor: pointer;
     margin-top: -10px;
@@ -105,15 +105,16 @@ body {
     flex-direction: column;
     padding: 0 24px;
     margin-top: 20px;
+    flex-grow: 1; /* Pushes the footer down */
 }
 
 .sidebar-link {
     text-decoration: none;
     color: #333;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1rem;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding: 18px 0;
+    border-bottom: 1px solid #e2e2e2; /* Light separator */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -123,6 +124,7 @@ body {
     cursor: pointer;
     text-align: left;
     font-family: var(--font-main);
+    letter-spacing: 0.3px;
 }
 
 .sidebar-dropdown-wrapper {
@@ -134,6 +136,9 @@ body {
     display: none;
     flex-direction: column;
     padding-left: 15px;
+    background-color: #ffffff; /* Slightly different bg for submenu to stand out */
+    margin: 0 -24px; /* Stretch full width */
+    padding: 0 24px;
 }
 
 .sidebar-submenu.active {
@@ -143,14 +148,51 @@ body {
 .submenu-link {
     text-decoration: none;
     color: #555;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 0.9rem;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 16px 0 16px 15px;
+    border-bottom: 1px solid #e2e2e2;
+    letter-spacing: 0.5px;
 }
 
 .submenu-link:last-child {
     border-bottom: none;
+}
+
+/* --- SIDEBAR FOOTER (Socials) --- */
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 24px;
+    border-top: 1px solid #e2e2e2;
+    background-color: #f4f5f6;
+    margin-top: auto; /* Pushes to bottom */
+}
+
+.social-icon {
+    color: #999;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.social-icon:hover {
+    color: #1a73e8;
+}
+
+.fare-rate-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.95rem;
+    margin-left: 10px;
+}
+
+.fare-rate-link i {
+    color: #666;
+    font-size: 1.1rem;
 }
 
 /* --- HERO SECTION --- */
@@ -723,15 +765,15 @@ body {
 .snackbar.show {
     visibility: visible;
     opacity: 1;
-    bottom: 50px; /* Slides up slightly */
+    bottom: 50px;
 }
 
 .snackbar.success {
-    background-color: #2e7d32; /* Professional green */
+    background-color: #2e7d32;
 }
 
 .snackbar.error {
-    background-color: #d32f2f; /* Professional red */
+    background-color: #d32f2f;
 }
 
 /* --- RESPONSIVE DESKTOP ADJUSTMENTS --- */
