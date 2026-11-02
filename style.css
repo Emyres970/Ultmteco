@@ -45,7 +45,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for contrast */
+    background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(2px);
     z-index: 1000;
     opacity: 0;
@@ -65,7 +65,7 @@ body {
     width: 85%;
     max-width: 320px;
     height: 100vh;
-    background-color: #f4f5f6; /* Exact light grey from screenshot */
+    background-color: #f4f5f6; 
     z-index: 1001;
     display: flex;
     flex-direction: column;
@@ -94,18 +94,18 @@ body {
 .close-menu-btn {
     background: transparent;
     border: none;
-    color: #1a5c8a; /* Blue close icon */
+    color: #1a5c8a;
     font-size: 28px;
     cursor: pointer;
     margin-top: -10px;
 }
 
+/* FIXED: Removed flex-grow and margin-top: auto so it flows naturally */
 .sidebar-nav {
     display: flex;
     flex-direction: column;
     padding: 0 24px;
     margin-top: 20px;
-    flex-grow: 1; /* Pushes the footer down */
 }
 
 .sidebar-link {
@@ -114,7 +114,7 @@ body {
     font-weight: 500;
     font-size: 1rem;
     padding: 18px 0;
-    border-bottom: 1px solid #e2e2e2; /* Light separator */
+    border-bottom: 1px solid #e2e2e2; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -136,8 +136,8 @@ body {
     display: none;
     flex-direction: column;
     padding-left: 15px;
-    background-color: #ffffff; /* Slightly different bg for submenu to stand out */
-    margin: 0 -24px; /* Stretch full width */
+    background-color: #ffffff; 
+    margin: 0 -24px; 
     padding: 0 24px;
 }
 
@@ -159,7 +159,7 @@ body {
     border-bottom: none;
 }
 
-/* --- SIDEBAR FOOTER (Socials) --- */
+/* FIXED: Now sits exactly below the nav links */
 .sidebar-footer {
     display: flex;
     align-items: center;
@@ -167,7 +167,7 @@ body {
     padding: 20px 24px;
     border-top: 1px solid #e2e2e2;
     background-color: #f4f5f6;
-    margin-top: auto; /* Pushes to bottom */
+    margin-top: 20px; /* Gives a little breathing room below Contact */
 }
 
 .social-icon {
