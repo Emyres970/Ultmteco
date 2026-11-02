@@ -254,21 +254,18 @@
         </button>
     </footer>
 
-    <!-- COPYRIGHT BAR -->
+        <!-- COPYRIGHT BAR -->
     <div class="copyright-bar">
         <p>Copyright by UltimateCourier Ltd All rights reserved</p>
     </div>
 
-    <!-- Your JS -->
-    <script src="main.js"></script>
-
-    <!-- Supabase Client Library -->
+    <!-- Supabase Client Library MUST load first -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     
-    <!-- Your Configuration & Logic -->
+    <!-- Configuration MUST load second -->
     <script src="supabase-config.js"></script>
+    
+    <!-- Main Logic MUST load last -->
     <script src="main.js"></script>
-</body>
-</html>
 </body>
 </html>
