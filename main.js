@@ -1,6 +1,52 @@
 // main.js
 document.addEventListener('DOMContentLoaded', () => {
     
+    // --- Custom Snackbar Function ---
+    function showSnackbar(message, type = 'success') {
+        const snackbar = document.getElementById('snackbar');
+        snackbar.innerText = message;
+        snackbar.className = `snackbar show ${type}`;
+        
+        // Hide after 4 seconds
+        setTimeout(() => {
+            snackbar.className = 'snackbar';
+        }, 4000);
+    }
+
+    // --- Sidebar Menu Logic ---
+    const openMenuBtn = document.getElementById('openMenuBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const sidebarMenu = document.getElementById('sidebarMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const dropdownToggle = document.getElementById('dropdownToggle');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    function openMenu() {
+        sidebarMenu.classList.add('active');
+        menuOverlay.classList.add('active');
+    }
+
+    function closeMenu() {
+        sidebarMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+    }
+
+    openMenuBtn.addEventListener('click', openMenu);
+    closeMenuBtn.addEventListener('click', closeMenu);
+    menuOverlay.addEventListener('click', closeMenu);
+
+    // Dropdown Toggle
+    dropdownToggle.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('active');
+        // Rotate chevron icon
+        const icon = dropdownToggle.querySelector('i');
+        if (dropdownMenu.classList.contains('active')) {
+            icon.style.transform = 'rotate(180deg)';
+        } else {
+            icon.style.transform = 'rotate(0deg)';
+        }
+    });
+
     // --- Helper Function to Handle Uploads ---
     async function handleUpload(fileInputId, buttonClass) {
         const fileInput = document.getElementById(fileInputId);
@@ -8,13 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // 1. Check if Supabase is actually loaded
         if (typeof supabaseClient === 'undefined') {
-            alert('Error: Supabase is not connected. Please check the script tags in your HTML.');
+            showSnackbar('Error: Supabase is not connected.', 'error');
             return;
         }
 
         // 2. Check if a file is selected
         if (!fileInput || !fileInput.files.length) {
-            alert('Please select an image to upload first.');
+            showSnackbar('Please select an image to upload first.', 'error');
             return;
         }
 
@@ -37,13 +83,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw error;
             }
 
+            // Success
             console.log('Upload successful:', data);
-            alert('File uploaded successfully!');
+            showSnackbar('File uploaded successfully!', 'success');
             fileInput.value = ''; // Clear the input
 
         } catch (error) {
             console.error('Upload error:', error);
-            alert('Upload failed: ' + error.message);
+            showSnackbar('Upload failed: ' + error.message, 'error');
         } finally {
             // Restore button state
             button.innerText = originalText;
@@ -73,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatBtn = document.querySelector('.floating-chat-btn');
     if (chatBtn) {
         chatBtn.addEventListener('click', () => {
-            alert("Chat clicked! We will connect this to the contact form later.");
+            showSnackbar('Chat feature coming soon!', 'success');
         });
     }
 });
