@@ -23,6 +23,21 @@ body {
     overflow-x: hidden;
 }
 
+/* --- YELLOW TRANSLATE BUTTON --- */
+.translate-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f39c12; /* Exact yellow/orange */
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 12px 24px;
+    z-index: 999;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
 /* --- HERO SECTION --- */
 .hero-section {
     position: relative;
@@ -32,7 +47,7 @@ body {
     flex-direction: column;
     padding: 20px 24px;
     
-    background-image: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.8)), url('https://raw.githubusercontent.com/Emyres970/Ultmteco/refs/heads/main/Src/file_0000000020ec81f4a1f7f070cd763d3b.png');
+    background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.8)), url('https://raw.githubusercontent.com/Emyres970/Ultmteco/refs/heads/main/Src/file_0000000020ec81f4a1f7f070cd763d3b.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -46,13 +61,14 @@ body {
     z-index: 10;
     position: relative;
     width: 100%;
+    margin-top: 30px; /* Push down to make room for translate button */
 }
 
 .menu-btn {
     background: transparent;
     border: none;
     color: var(--text-white);
-    font-size: 28px;
+    font-size: 36px; /* Made slightly larger to match original */
     cursor: pointer;
     padding: 5px;
 }
@@ -64,11 +80,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    pointer-events: none; /* Prevents logo from blocking clicks */
 }
 
 .logo-img {
-    max-height: 60px; 
-    width: auto;
+    width: 240px; /* Huge logo size matching the screenshot */
+    max-width: 90%;
+    height: auto;
     object-fit: contain;
 }
 
@@ -79,32 +98,32 @@ body {
     flex-direction: column;
     justify-content: center; 
     z-index: 10;
-    margin-top: 80px; 
+    margin-top: 100px; /* Pushes title down exactly like screenshot */
 }
 
 .hero-subtitle {
     color: var(--text-white);
-    font-size: 1.15rem;
+    font-size: 1.3rem; /* Made larger */
     font-weight: 400;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     letter-spacing: 0.5px;
 }
 
 .hero-title {
     color: var(--text-white);
-    font-size: 3.2rem; 
-    line-height: 1.15; 
+    font-size: 3.8rem; /* Massive text matching the screenshot */
+    line-height: 1.1; 
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     letter-spacing: -0.5px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.4); 
 }
 
 .title-accent-line {
-    width: 70px;
+    width: 80px;
     height: 4px;
     background-color: var(--primary-blue); 
-    margin-bottom: 45px;
+    margin-bottom: 50px;
 }
 
 /* --- BUTTONS --- */
@@ -119,7 +138,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 16px 20px;
+    padding: 18px 20px;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 700;
@@ -184,7 +203,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* Spacing between multiple options */
 .option-container {
     margin-bottom: 40px; 
 }
@@ -210,7 +228,6 @@ body {
     font-weight: 600;
 }
 
-/* Grey color for the "no image needed" marker */
 .image-marker.no-image {
     color: #777; 
 }
@@ -587,8 +604,8 @@ body {
     }
     
     .hero-title {
-        font-size: 4.5rem;
-        max-width: 700px;
+        font-size: 5rem;
+        max-width: 800px;
     }
     
     .hero-buttons {
@@ -601,6 +618,10 @@ body {
         transform: none;
     }
     
+    .logo-img {
+        width: 300px; /* Even bigger on desktop */
+    }
+
     .form-section {
         padding: 80px 60px;
         max-width: 800px;
