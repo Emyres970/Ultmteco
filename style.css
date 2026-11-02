@@ -28,7 +28,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #f39c12; /* Exact yellow/orange */
+    background-color: #f39c12;
     color: #ffffff;
     font-weight: 600;
     font-size: 1rem;
@@ -36,6 +36,121 @@ body {
     z-index: 999;
     cursor: pointer;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* --- SIDEBAR MENU --- */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(50, 40, 30, 0.4); /* Muted brownish blur look */
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -350px;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: #d8c8ba; /* Match the brownish background in screenshot */
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+}
+
+.sidebar-menu.active {
+    left: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px 24px 10px 24px;
+}
+
+.sidebar-logo {
+    width: 180px;
+    height: auto;
+    object-fit: contain;
+}
+
+.close-menu-btn {
+    background: transparent;
+    border: none;
+    color: #1a5c8a;
+    font-size: 28px;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px;
+    margin-top: 20px;
+}
+
+.sidebar-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-main);
+}
+
+.sidebar-dropdown-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-submenu {
+    display: none;
+    flex-direction: column;
+    padding-left: 15px;
+}
+
+.sidebar-submenu.active {
+    display: flex;
+}
+
+.submenu-link {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.submenu-link:last-child {
+    border-bottom: none;
 }
 
 /* --- HERO SECTION --- */
@@ -46,7 +161,6 @@ body {
     display: flex;
     flex-direction: column;
     padding: 20px 24px;
-    
     background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.8)), url('https://raw.githubusercontent.com/Emyres970/Ultmteco/refs/heads/main/Src/file_0000000020ec81f4a1f7f070cd763d3b.png');
     background-size: cover;
     background-position: center;
@@ -61,14 +175,14 @@ body {
     z-index: 10;
     position: relative;
     width: 100%;
-    margin-top: 30px; /* Push down to make room for translate button */
+    margin-top: 30px; 
 }
 
 .menu-btn {
     background: transparent;
     border: none;
     color: var(--text-white);
-    font-size: 36px; /* Made slightly larger to match original */
+    font-size: 36px; 
     cursor: pointer;
     padding: 5px;
 }
@@ -81,11 +195,11 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    pointer-events: none; /* Prevents logo from blocking clicks */
+    pointer-events: none; 
 }
 
 .logo-img {
-    width: 240px; /* Huge logo size matching the screenshot */
+    width: 240px; 
     max-width: 90%;
     height: auto;
     object-fit: contain;
@@ -98,12 +212,12 @@ body {
     flex-direction: column;
     justify-content: center; 
     z-index: 10;
-    margin-top: 100px; /* Pushes title down exactly like screenshot */
+    margin-top: 100px; 
 }
 
 .hero-subtitle {
     color: var(--text-white);
-    font-size: 1.3rem; /* Made larger */
+    font-size: 1.3rem; 
     font-weight: 400;
     margin-bottom: 15px;
     letter-spacing: 0.5px;
@@ -111,7 +225,7 @@ body {
 
 .hero-title {
     color: var(--text-white);
-    font-size: 3.8rem; /* Massive text matching the screenshot */
+    font-size: 3.8rem; 
     line-height: 1.1; 
     font-weight: 800;
     margin-bottom: 25px;
@@ -352,7 +466,7 @@ body {
     min-width: 120px;
 }
 
-/* --- MAIN FOOTER CONTAINER (WHITE BACKGROUND) --- */
+/* --- MAIN FOOTER CONTAINER --- */
 .main-footer-container {
     padding: 40px 24px;
     background-color: #ffffff;
@@ -411,16 +525,11 @@ body {
     color: var(--primary-blue);
 }
 
-.dropdown-link {
-    color: #444;
-}
-
 .dropdown-icon {
     font-size: 0.8rem;
     color: #888;
 }
 
-/* --- BROCHURE BOXES --- */
 .brochure-boxes {
     display: flex;
     flex-direction: column;
@@ -484,7 +593,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* --- RECENT POSTS --- */
 .recent-post {
     display: flex;
     align-items: center;
@@ -522,7 +630,6 @@ body {
     font-size: 0.85rem;
 }
 
-/* --- ABOUT US --- */
 .footer-logo-large {
     width: 200px;
     max-width: 100%;
@@ -538,7 +645,6 @@ body {
     color: #d1e1f0;
 }
 
-/* --- QUICK LINKS --- */
 .quick-links-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; 
@@ -576,7 +682,6 @@ body {
     color: #4a90e2;
 }
 
-/* Ensure "Contact" falls under the Cost Calculators sub-links */
 .quick-links-grid > .quick-link:last-child {
     grid-column: 1 / -1;
 }
@@ -586,7 +691,6 @@ body {
     right: 25px;
 }
 
-/* --- COPYRIGHT BAR --- */
 .copyright-bar {
     background-color: #0b4a7d; 
     color: #ffffff;
@@ -596,6 +700,39 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* --- CUSTOM SNACKBAR --- */
+.snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 16px;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-size: 0.95rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0;
+    transition: opacity 0.3s, bottom 0.3s;
+}
+
+.snackbar.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px; /* Slides up slightly */
+}
+
+.snackbar.success {
+    background-color: #2e7d32; /* Professional green */
+}
+
+.snackbar.error {
+    background-color: #d32f2f; /* Professional red */
+}
 
 /* --- RESPONSIVE DESKTOP ADJUSTMENTS --- */
 @media (min-width: 768px) {
@@ -619,7 +756,7 @@ body {
     }
     
     .logo-img {
-        width: 300px; /* Even bigger on desktop */
+        width: 300px;
     }
 
     .form-section {
